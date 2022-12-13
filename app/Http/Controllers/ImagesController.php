@@ -10,6 +10,10 @@ class ImagesController extends Controller
     public function __invoke()
     {
         $HomePageImages = DB::table('images')->get();
+        foreach($HomePageImages as $item){
+            var_dump($item->pages);
+            $item->pages = json_decode($item->pages);
+        }
         return response([
             "code" => 200,
             "message" => "request successful",

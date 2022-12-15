@@ -25,4 +25,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
  */
 
 Route::post('/login',LoginController::class);
-Route::get('/resouce/home',ImagesController::class);
+Route::get('/resouce/{pageName}',ImagesController::class);
